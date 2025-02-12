@@ -35,6 +35,17 @@ export default class QuestionModel {
         return new QuestionModel(this.#id, this.#title, shuffledAnswers, this.#right)
     }
 
+    repplyWith(indice: number): QuestionModel {
+        const correct = this.#answers[indice]?.right
+        const answers = this.#answers.map((answer, i) => {
+            const selectedAnswer = indice === i
+            const mustReveal = selectedAnswer || answer?.right
+            return mustReveal ? answer.reveal() : answer
+        })
+
+        return new QuestionModel(this.#id, this.title, answers, correct)
+    }
+
     get answered() {
         for (let answer of this.#answers){
             if(answer.revealed) return true
