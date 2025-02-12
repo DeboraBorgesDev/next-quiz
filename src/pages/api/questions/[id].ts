@@ -7,7 +7,7 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
     const filteredQuestion = questions.filter(question => question.id === id)
 
     if(filteredQuestion.length === 1){
-        const questionSelected = filteredQuestion[0]
+        const questionSelected = filteredQuestion[0].shuffleAnswers()
         return res.status(200).json(questionSelected.toObject());
     } else{
         return res.status(204).send("Nenhuma pergunta encontrada!")

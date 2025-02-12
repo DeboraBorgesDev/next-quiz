@@ -1,3 +1,4 @@
+import { shuffleQuestions } from "@/functions/Arrays"
 import AnswerModel from "./answer"
 
 export default class QuestionModel {
@@ -27,6 +28,11 @@ export default class QuestionModel {
 
     get right(){
         return this.#right
+    }
+
+    shuffleAnswers(): QuestionModel {
+        let shuffledAnswers = shuffleQuestions(this.#answers)
+        return new QuestionModel(this.#id, this.#title, shuffledAnswers, this.#right)
     }
 
     get answered() {
