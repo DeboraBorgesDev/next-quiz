@@ -9,6 +9,14 @@ export default class AnswerModel{
         this.#revealed = revealed
     }
 
+    static correct(valor: string) {
+        return new AnswerModel(valor, true)
+    }
+    
+    static wrong(valor: string) {
+        return new AnswerModel(valor, false)
+    }
+
     get value() {
         return this.#value
     }
@@ -19,5 +27,13 @@ export default class AnswerModel{
 
     get revealed(){
         return this.#revealed
+    }
+
+    toObject(){
+       return {
+        value: this.#value,
+        right: this.#right,
+        revealed: this.#revealed
+       }
     }
 }
