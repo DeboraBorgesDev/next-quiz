@@ -1,10 +1,12 @@
+import AnswerModel from "./answer"
+
 export default class QuestionModel {
     #id: number
     #title: string
-    #answers: any[]
+    #answers: AnswerModel[]
     #right: boolean
 
-    constructor(id: number, title: string, answers: any[], right = false){
+    constructor(id: number, title: string, answers: AnswerModel[], right = false){
         this.#id = id
         this.#title = title
         this.#answers = answers
@@ -25,6 +27,14 @@ export default class QuestionModel {
 
     get right(){
         return this.#right
+    }
+
+    get answered() {
+        for (let answer of this.#answers){
+            if(answer.revealed) return true
+        }
+
+        return false
     }
 
 
