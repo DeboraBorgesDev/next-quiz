@@ -4,6 +4,7 @@ import Title from "../title";
 import Answer from "../answer";
 interface QuestionProps {
     value: QuestionModel
+    onResponse: (index: number) => void
 }
 
 export default function Question(props: QuestionProps) {
@@ -25,6 +26,8 @@ export default function Question(props: QuestionProps) {
                     index={i}
                     letter={letters[i].value}
                     letterColor={letters[i].color}
+                    onResponse={props.onResponse}
+
                 />
             )
         })

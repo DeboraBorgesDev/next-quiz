@@ -44,3 +44,23 @@
     color: #000
 }
 
+.back > div  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    border-radius: 12px;
+}
+
+.correct {
+    background-color: #2baa6D;
+}
+
+.wrong {
+    background-color: #E44A4C;
+}
+
+.correct .value, .wrong .value {
+    font-size: 1.5rem;
+}
