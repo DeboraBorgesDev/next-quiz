@@ -6,6 +6,7 @@ import AnswerModel from "@/model/answer";
 import styles from './styles.module.css'
 import { useState } from "react";
 import Button from "@/components/button";
+import Questionnaire from "@/components/questionnaire";
 
 const poppins = Poppins({ subsets: ['latin'], weight: ['100', '200', '300', '400', '500', '700'] });
 const questao = new QuestionModel(222, 'Cor', [
@@ -17,22 +18,27 @@ const questao = new QuestionModel(222, 'Cor', [
 
 export default function Home() {
   const [question, setQuestion] = useState(questao);
-  
 
-  const onResponse = (index: number) => {
-    setQuestion(question.repplyWith(index))
+
+  const answeredQuestion = (question: QuestionModel) => {
+
   }
 
-  const timeOut = () => {
-    !question.answered && setQuestion(question.repplyWith(-1))
+  const onNextStep = () => {
+
   }
+
 
   return (
     <div
       className={`${poppins} ${styles.container}`}
     >
-     <Question value={question} onResponse={onResponse} timeOut={timeOut} />
-     <Button text="Próxima" href="/result"/>
+     <Questionnaire 
+        question={question} 
+        lastQuestion={false} 
+        onNextStep={onNextStep} 
+        answeredQuestion={answeredQuestion} 
+      />
     </div>
   );
 }
