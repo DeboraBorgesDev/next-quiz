@@ -63,5 +63,10 @@ export default class QuestionModel {
         }
     }
 
+    static fromObject(obj: QuestionModel): QuestionModel {
+        const formattedAnswers = obj.answers.map((r) => AnswerModel.fromObject(r))
+        return new QuestionModel(obj.id, obj.title, formattedAnswers, obj.right)
+    }
+
 
 }

@@ -1,15 +1,22 @@
 .answer {
     display: flex;
-    min-width: 500px;
+    min-width: 500px; 
     width: 80%;
     height: 100px;
     margin: 10px;
+    perspective: 1000px;
 }
 
-.content {
+.answerContent {
     position: relative;
     display: flex;
     flex: 1;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.answerRevealed .answerContent {
+    transform: rotateY(180deg);
 }
 
 .letter {
@@ -31,17 +38,20 @@
 }
 
 .front, .back{
+    position: absolute;
     display: flex;
     height: 100%;
     width: 100%;
-    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 .front {
     align-items: center;
     border-radius: 12px;
     padding: 15px;
-    background-color: aliceblue;
-    color: #000
+    color: #000;
+    background-color: #fff;
+
 }
 
 .back > div  {
@@ -64,3 +74,5 @@
 .correct .value, .wrong .value {
     font-size: 1.5rem;
 }
+
+

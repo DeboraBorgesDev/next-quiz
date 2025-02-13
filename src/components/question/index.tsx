@@ -5,7 +5,7 @@ import Answer from "../answer";
 import Timer from "../timer";
 interface QuestionProps {
     value: QuestionModel
-    onResponse: (index: number) => void
+    answerProvided: (index: number) => void
     timeOut: () => void
 }
 
@@ -20,7 +20,7 @@ export default function Question(props: QuestionProps) {
     ]
 
     const renderAnswers = () => {
-        return question.answers.map((answer, i) => {
+        return question?.answers?.map((answer, i) => {
             return (
                 <Answer
                     key={i}
@@ -28,7 +28,7 @@ export default function Question(props: QuestionProps) {
                     index={i}
                     letter={letters[i].value}
                     letterColor={letters[i].color}
-                    onResponse={props.onResponse}
+                    answerProvided={props.answerProvided}
 
                 />
             )
@@ -37,8 +37,8 @@ export default function Question(props: QuestionProps) {
 
     return(
         <div className={styles.question}>
-            <Title value={question.title}/>
-            <Timer duration={10} timeOut={props.timeOut}/>
+            <Title value={question?.title}/>
+            <Timer duration={5} timeOut={props.timeOut} key={question?.id}/>
             {renderAnswers()}
         </div>
     )

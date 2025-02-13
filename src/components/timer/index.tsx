@@ -3,6 +3,7 @@ import styles from './styles.module.css'
 
 interface TimerProps{
     duration: number,
+    key: number,
     timeOut: () => void
 
 }

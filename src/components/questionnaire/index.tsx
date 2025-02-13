@@ -18,7 +18,7 @@ export default function Questionnaire(props: QuestionnaireProps) {
         }
     }
 
-   
+   console.log(props.lastQuestion)
 
     return (
         <div className={styles.questionnaire}>

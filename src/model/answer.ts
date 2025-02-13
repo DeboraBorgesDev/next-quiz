@@ -37,6 +37,10 @@ export default class AnswerModel{
        }
     }
 
+    static fromObject(obj: AnswerModel): AnswerModel {
+        return new AnswerModel(obj.value, obj.right, obj.revealed)
+    }
+
     reveal(): AnswerModel {
         return new AnswerModel(this.#value, this.#right, true)
     }
