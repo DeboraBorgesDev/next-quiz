@@ -5,6 +5,7 @@ import QuestionModel from "@/model/question";
 import AnswerModel from "@/model/answer";
 import styles from './styles.module.css'
 import { useState } from "react";
+import Button from "@/components/button";
 
 const poppins = Poppins({ subsets: ['latin'], weight: ['100', '200', '300', '400', '500', '700'] });
 const questao = new QuestionModel(222, 'Cor', [
@@ -31,6 +32,7 @@ export default function Home() {
       className={`${poppins} ${styles.container}`}
     >
      <Question value={question} onResponse={onResponse} timeOut={timeOut} />
+     <Button text="Próxima" href="/result"/>
     </div>
   );
 }
