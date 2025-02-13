@@ -2,9 +2,11 @@ import QuestionModel from "@/model/question";
 import styles from './style.module.css'
 import Title from "../title";
 import Answer from "../answer";
+import Timer from "../timer";
 interface QuestionProps {
     value: QuestionModel
     onResponse: (index: number) => void
+    timeOut: () => void
 }
 
 export default function Question(props: QuestionProps) {
@@ -36,6 +38,7 @@ export default function Question(props: QuestionProps) {
     return(
         <div className={styles.question}>
             <Title value={question.title}/>
+            <Timer duration={10} timeOut={props.timeOut}/>
             {renderAnswers()}
         </div>
     )

@@ -22,11 +22,15 @@ export default function Home() {
     setQuestion(question.repplyWith(index))
   }
 
+  const timeOut = () => {
+    !question.answered && setQuestion(question.repplyWith(-1))
+  }
+
   return (
     <div
       className={`${poppins} ${styles.container}`}
     >
-     <Question value={question} onResponse={onResponse} />
+     <Question value={question} onResponse={onResponse} timeOut={timeOut} />
     </div>
   );
 }
