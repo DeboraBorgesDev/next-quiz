@@ -1,4 +1,4 @@
-const URL_BASE = 'http://localhost:3000/api'
+const URL_BASE = 'https://next-quiz-weld.vercel.app/api'
 
 
 export function getQuestionsIds() {
