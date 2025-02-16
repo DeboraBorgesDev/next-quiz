@@ -11,8 +11,6 @@ export default function Result() {
     const corrects = Number(router.query.rightAnswers)
     const percentual = Math.round((corrects/total) * 100)
 
-    console.log({total, corrects})
-
     return (
         <div className={styles.result}>
             <h1>Resultado Final</h1>
