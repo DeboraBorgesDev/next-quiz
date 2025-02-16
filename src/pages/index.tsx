@@ -1,7 +1,7 @@
 
 import { Poppins} from "next/font/google";
-import QuestionModel from "@/model/question";
-import AnswerModel from "@/model/answer";
+import QuestionModel from "../../model/question";
+import AnswerModel from "../../model/answer";
 import styles from './styles.module.css'
 import { useEffect, useState } from "react";
 import Questionnaire from "@/components/questionnaire";

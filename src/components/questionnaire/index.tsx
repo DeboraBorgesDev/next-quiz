@@ -1,4 +1,4 @@
-import QuestionModel from "@/model/question"
+import QuestionModel from "../../../model/question"
 import styles from './styles.module.css'
 import Question from "../question"
 import Button from "../button"

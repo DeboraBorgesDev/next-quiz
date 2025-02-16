@@ -1,4 +1,4 @@
-import AnswerModel from "@/model/answer";
+import AnswerModel from "../../../model/answer";
 import styles from "./styles.module.css";
 
 interface AnswerProps {

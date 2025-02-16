@@ -1,4 +1,4 @@
-import { shuffleQuestions } from "@/functions/Arrays"
+import { shuffleQuestions } from "../functions/Arrays"
 import AnswerModel from "./answer"
 
 export default class QuestionModel {
