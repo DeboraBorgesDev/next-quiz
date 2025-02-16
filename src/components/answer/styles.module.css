@@ -40,7 +40,7 @@
 .front, .back{
     position: absolute;
     display: flex;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
