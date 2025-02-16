@@ -22,6 +22,9 @@ export default function Home() {
     setQuestion(question)
     const right = question.right
     setRightAnswers(rightAnswers + (right ? 1 : 0))
+    if(right){
+      onNextStep()
+    }
   }
 
   const idNextQuestion = () => {

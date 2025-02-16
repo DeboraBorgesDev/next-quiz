@@ -38,7 +38,7 @@ export default function Question(props: QuestionProps) {
     return(
         <div className={styles.question}>
             <Title value={question?.title}/>
-            <Timer duration={5} timeOut={props.timeOut} key={question?.id}/>
+            <Timer duration={10} timeOut={props.timeOut} key={question?.id}/>
             {renderAnswers()}
         </div>
     )
