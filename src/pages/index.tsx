@@ -1,11 +1,10 @@
 
 import { Poppins} from "next/font/google";
 import QuestionModel from "../../model/question";
-import AnswerModel from "../../model/answer";
 import styles from './styles.module.css'
 import { useEffect, useState } from "react";
 import Questionnaire from "@/components/questionnaire";
-import { getQuestion, getQuestionsIds } from "./services/questions";
+import { getQuestion, getQuestionsIds } from "../../services/questions";
 import { useRouter } from "next/router";
 
 const poppins = Poppins({ subsets: ['latin'], weight: ['100', '200', '300', '400', '500', '700'] });
